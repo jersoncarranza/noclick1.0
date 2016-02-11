@@ -20,7 +20,6 @@ app.use('/', routes);  						// Rutas
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
-
   if (isNaN(port)) {
     // named pipe
     return val;
@@ -34,11 +33,10 @@ function normalizePort(val) {
   return false;
 }
 
-
-var port = normalizePort(process.env.PORT || '3000');
+var port = Number(process.env.PORT || '3000');
 app.set('port', port);
 
 var server = http.createServer(app);
 server.listen(port);
 
-console.log('escuchando el puerto', port);
+console.log('escuchando el puerto:', port);
