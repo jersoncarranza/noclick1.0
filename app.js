@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');		// Módulo para acceder a datos de los
 var multer = require('multer'); 				// Módulo para cargar imágenes temporales
 var routes = require('./routes/index'); 		// Rutas
 var method_override = require('method-override'); // Módulo para sobreescribir rutas
-
+var http = require('http');
 // **************  Generamos la aplicación
 var app = express();
 
@@ -16,8 +16,6 @@ app.set("view engine", "jade"); 			// Engine de las vistas -> Jade
 app.use(express.static("public")); 			// Carpeta que contendrá los archivos estáticos
 app.use(method_override("_method")); 		// Variable que se usará para redefinir métodos
 app.use('/', routes);  						// Rutas
-
-
 
 
 function normalizePort(val) {
@@ -36,8 +34,11 @@ function normalizePort(val) {
   return false;
 }
 
+
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-app.listen(port);
+var server = http.createServer(app);
+server.listen(port);
+
 console.log('escuchando el puerto', port);
