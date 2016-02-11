@@ -20,7 +20,7 @@ function normalizePort(val) {
 
 var app = new expressServer();
 var server = http.createServer(app.expressServer);
-var port = Number(process.env.PORT || 5000)
+var port = normalizePort(process.env.PORT || 5000)
 server.listen(port);
 console.log('escuchando el puerto', port);
 
