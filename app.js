@@ -17,7 +17,7 @@ app.use(express.static("public")); 			// Carpeta que contendrá los archivos est
 app.use(method_override("_method")); 		// Variable que se usará para redefinir métodos
 app.use('/', routes);  						// Rutas
 
+var port = Number(process.env.PORT || 5000)
 // **************  Arrancamos la aplicación
-app.listen(8080, function() {
-  console.log('Express activo en el puerto 8080');
-});
+app.listen(port);
+console.log('escuchando el puerto', port);
