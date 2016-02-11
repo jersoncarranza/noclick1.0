@@ -1,0 +1,38 @@
+extends ../layout.jade
+block contenido
+  - vari= "confirmar"
+  h1 Panel de administración
+  table(class="table")
+    caption Profesores Actuales
+    thead
+      tr
+        th #
+        th Nombre
+        th Descripción
+        th Puntos
+        th Imagenes
+        th Contraseña
+        th Acciones
+    tbody
+      each product in products
+        form(method="POST" action="/menu/#{product.id}?_method=put" style="margin-top:1.5em" enctype="multipart/form-data")
+          tr
+            td
+              input(type="text" name="id" value="#{product.id}" placeholder="Nombre del Profesore" class="form-control" enctype="multipart/form-data")
+            td
+              input(type="text" name="title" value="#{product.title}" placeholder="Nombre del Profesore" class="form-control" enctype="multipart/form-data")
+            td
+              input(type="text" name="description" value="#{product.description}" placeholder="Descripción del Profesore" class="form-control")
+            td
+              input(type="number" name="pricing" placeholder="Costo" class="form-control" value="#{product.pricing}")
+            td
+              a(href="#{product.imageUrl}" class="btn") Ver Imagen
+            td
+              input(type="password" name="password" placeholder="Contraseña" class="form-control")
+              //-a(href="#{product.imageUrl}" class="btn") Ver Imagen
+            td
+              input(type="submit" class="btn btn-info" value="Guardar")
+              //-a(href="/menu/edit/#{product.id}") Editar
+              =" - "
+              a(href="/menu/delete/#{product.id}") Eliminar
+              
