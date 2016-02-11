@@ -1,21 +1,6 @@
-// **************  Zona de importación de paquetes
-var express = require('express'); 				// App Express
-var bodyParser = require('body-parser');		// Módulo para acceder a datos de los post
-var multer = require('multer'); 				// Módulo para cargar imágenes temporales
-var routes = require('./routes/index'); 		// Rutas
-var method_override = require('method-override'); // Módulo para sobreescribir rutas
-var http = require('http');
-// **************  Generamos la aplicación
-var app = express();
+var http  = require('http');
+var expressServer = require('./ExpressServer0.js');
 
-// **************  Zona de configuraciones de la aplicación
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));  // Por defecto es true
-app.use(multer({dest: "./uploads"}).single('image_item'));
-app.set("view engine", "jade"); 			// Engine de las vistas -> Jade
-app.use(express.static("public")); 			// Carpeta que contendrá los archivos estáticos
-app.use(method_override("_method")); 		// Variable que se usará para redefinir métodos
-app.use('/', routes);  						// Rutas
 
 
 function normalizePort(val) {
@@ -33,10 +18,10 @@ function normalizePort(val) {
   return false;
 }
 
-var port = Number(process.env.PORT || '3000');
-app.set('port', port);
-
-var server = http.createServer(app);
+var app = new expressServer();
+var server = http.createServer(app.expressServer);
+var port = Number(process.env.PORT || 5000)
 server.listen(port);
+console.log('escuchando el puerto', port);
 
-console.log('escuchando el puerto:', port);
+
