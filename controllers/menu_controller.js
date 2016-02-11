@@ -133,7 +133,7 @@ exports.put = function(req, res){
 				};
 				
 				models.Product.update({"_id": req.params.id}, data, function(product){
-				//res.redirect("/menu");
+				res.redirect("../resultados");
 				console.log("Ingreso usuario normal");
 				});
 
@@ -175,18 +175,3 @@ exports.delete = function(req, res){
 		respuesta.redirect("/");
 	}
 };
-
-/*
-
-exports.findId= function (id, callback ) {
-	models.Product.findOne(
-				{_id:id_producto},
-				{pricing:1})
-				.exec(function(err,doc){
-					if(err) throw err;
-					callback(doc);
-				})
-};
-
-
-*/

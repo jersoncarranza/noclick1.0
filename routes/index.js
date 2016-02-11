@@ -11,6 +11,7 @@ var adminController = require('../controllers/admin_controller');
 router.get("/", webController.index); 				// Index de la app
 router.get("/contacto", webController.contacto); 	// Conctacto de la app
 router.get("/about", webController.about); 			// Acerca de la app
+router.get("/resultados", webController.resultados); 	// Resultados
 
 // **************  Gestión de rutas de menú
 router.post('/menu', menuController.create); 		// Recibe los parámetros y crea el objeto

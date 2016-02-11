@@ -10,3 +10,7 @@ exports.contacto = function (req, res){
 exports.about = function (req, res){
 	res.render('about');
 };
+
+exports.resultados = function (req, res){
+	res.render('resultados');
+};
