@@ -1,22 +1,6 @@
-doctype html
-html(lang="es")
-  head
-    title ¡No Click!
-    meta(charset="utf-8")
-    link(href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet")
-    link(href="/css/main.css" rel="stylesheet")
-    link(href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
-    link(href='css/animate.css' rel='stylesheet' type='text/css')
-  body
-    section(class="full-height text-center" id="main-content")
-      div(class="data")
-        div(class="col-md-3 center-block no-float top-space")
-        h1(class="pacifico big green animated fadeIn delay-1") No Click
-          nav
-            a(href="/" class="right-space animated fadeInDown delay-2") Resultados
-            p(href="/" class="animated fadeInDown delay-2") Incompleto 12 Febrero 2014
-              //- a(href="/contacto" class="right-space") Contacto
-              //- a(href="/about" class="right-space") Acerca de
-    script(src="https://code.jquery.com/jquery-2.1.1.min.js")
-    script(src="js/main.js")
+h2 resultados
+  each product in products
+    div( class="col-md-1 col-sm-4 col-xs-4 inline-block" )
+        label.col-sm-2.control-label(name='pricing') #{product.pricing}
+        label.col-sm-2.control-label(name='title') #{product.title}
+        img( src="#{ product.image.url }" class="col-xs-10 no-float img-circle")

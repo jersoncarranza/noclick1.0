@@ -3,27 +3,16 @@ html(lang="en")
   head
     title ¡No Click!
     meta(charset="utf-8")
-    link(href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet")
+    link(href="https://bootswatch.com/yeti/bootstrap.min.css" rel="stylesheet")
     link(href="/css/main.css" rel="stylesheet")
     link(href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css')
     link(href='css/animate.css' rel='stylesheet' type='text/css')
   body
-    nav(class="large-padding fondo-black")
-      ul(class="no-list mediano")
-        li(class="pacifico col-md-3 inline-block")
-            a(href="/" class="green") No Click #[small(class="lato small") beta]
-
-        //- li(class="col-md-3 inline-block")
-        //-   a(href="/menu") Menú
-
-        //- li(class="col-md-3 inline-block")
-        //-   a(href="/contacto") Contacto
-
-        //- li(class="col-md-3 inline-block")
-        //-   a(href="/about") Acerca de
-
+    nav(class="navbar navbar-inverse")
+        div(class="container-fluid")
+            div(class="navbar-header")
+                a(href="/" class="pacifico navbar-brand") No Click #[small(class="lato small") beta]
     block contenido
-
     script(src="https://code.jquery.com/jquery-2.1.1.min.js")
     script(src="js/main.js")

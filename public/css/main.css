@@ -50,7 +50,7 @@ img{
 	font-size: 1.3em;
 }
 .menu img{
-	margin: 20px 0px;
+	margin: 5px 0px;
 }
 a,.blue{
 	color: #009FFF;
@@ -71,4 +71,14 @@ a,.blue{
 }
 .no-list li{
 	list-style-type: none;
+}
+.m-title{
+	margin-bottom: 2em ;
+}
+.b-img { 
+	margin-bottom: 0.2em;
+	margin-left: 0.5em;
+	border-radius: 1em;
+	border: 1px solid #009FFF; 
+
 }

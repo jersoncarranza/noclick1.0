@@ -3,18 +3,19 @@ block contenido
 	- nvotos = 0
 	if (nvotos == 0)
 		//- p Gracias
-		- nvotos = 1
+		- nvotos = 1 
 	else
 		//- p Ya voto usted
 
-	h2 Vota por mejor profesor
+	h2(class="text-center m-title")
+		strong Vota por el mejor profesor de Sistemas
 	each product in products
-		div( class="col-md-1 col-sm-4 col-xs-4 inline-block" )
+		div( class="col-lg-1 col-md-2 col-sm-3 col-xs-3 inline-block b-img " )
 			form(method="POST" action="/menu/#{product.id}?_method=put" enctype="multipart/form-data")
-				label.col-sm-2.control-label(name='title') #{product.title}   
+				label.col-sm-2.control-label(name='title' class='text-center') #{product.title}   
 				label.col-sm-2.control-label(name='id' style="visibility:hidden") #{product.id}
-				img( src="#{ product.image.url }" class="col-xs-10 no-float img-circle")
-				//-label.col-sm-2.control-label(name='pricing') #{product.pricing}
-				//-label.col-sm-2.control-label(name='password' ) usuario
+				img( src="#{ product.image.url }" class="col-xs-12 no-float img-circle")
 				input(type="text" name="password" class="form-control" value="usuario" style="visibility:hidden")
 				input(type="submit" class="btn btn-info form-control" value="votar")
+				//-label.col-sm-2.control-label(name='password' ) usuario
+				//-label.col-sm-2.control-label(name='pricing') #{product.pricing}

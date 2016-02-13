@@ -133,12 +133,11 @@ exports.put = function(req, res){
 				};
 				
 				models.Product.update({"_id": req.params.id}, data, function(product){
-				res.redirect("../resultados");
+				//hola(res);
 				console.log("Ingreso usuario normal");
+				res.redirect("../resultados");
 				});
-
 			});
-
 		}	
 		else{
 		respuesta.redirect("/");		
@@ -147,7 +146,6 @@ exports.put = function(req, res){
 };
 //Editar Producto Cualquiera que entre a la pagina.
 exports.modi = function(req, res){
-
 		var data = {
 			pricing: req.body.pricing
 		};
@@ -175,3 +173,36 @@ exports.delete = function(req, res){
 		respuesta.redirect("/");
 	}
 };
+/*
+exports.resultados = function (res) {
+	
+	models.Product.find(function (error, documento) {
+		if (error) {console.log(error)}
+		console.log("Objeto......", documento);
+		res.render('./resultados',{lista:documento});
+		console.log("Resultados");
+
+	})
+};
+*/
+
+exports.resultados = function (req, res){
+	models.Product.find(function(error, documento){
+		if(error){console.log(error);}
+//		console.log("esto es objeto..",documento.description);
+		res.render('./resultados', {products: documento });
+	});
+};
+
+
+/*
+
+exports.list = function (req, res){
+	models.Product.find(function(error, documento){
+		if(error){console.log(error);}
+		console.log("esto es objeto..",documento.description);
+		res.render('menu/index', {products: documento });
+	});
+};
+
+*/

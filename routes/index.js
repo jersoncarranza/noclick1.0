@@ -11,7 +11,7 @@ var adminController = require('../controllers/admin_controller');
 router.get("/", webController.index); 				// Index de la app
 router.get("/contacto", webController.contacto); 	// Conctacto de la app
 router.get("/about", webController.about); 			// Acerca de la app
-router.get("/resultados", webController.resultados); 	// Resultados
+//router.get("/resultados", webController.resultados); 	// Resultados
 
 // **************  Gestión de rutas de menú
 router.post('/menu', menuController.create); 		// Recibe los parámetros y crea el objeto
@@ -21,7 +21,8 @@ router.get('/menu/edit/:id', menuController.edit);	// Vista de edición de un pr
 router.put('/menu/:id', menuController.put);	// Edición de un producto
 router.get('/menu/delete/:id', menuController.deleteView);// Pantalla que nos muestra un producto a borrar
 router.delete('/menu/:id', menuController.delete); 	// Gestión del borrado del producto
-
+//**
+router.get('/resultados', menuController.resultados); 			// Lista los objetos
 // **************  Gestión de rutas de administración
 router.get('/admin', adminController.admin); 			// Página para ingresar contraseña
 router.post('/admin', adminController.login); 			// Lista los objetos en modo admin
