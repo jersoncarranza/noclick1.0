@@ -1,6 +1,9 @@
-h2 resultados
-  each product in products
-    div( class="col-md-1 col-sm-4 col-xs-4 inline-block" )
-        label.col-sm-2.control-label(name='pricing') #{product.pricing}
-        label.col-sm-2.control-label(name='title') #{product.title}
-        img( src="#{ product.image.url }" class="col-xs-10 no-float img-circle")
+extends ./layout.jade
+block contenido
+
+	h2 resultadosm
+	each product in products
+		div( class="col-md-1 col-sm-4 col-xs-4 inline-block" )
+			label.col-sm-2.control-label(name='pricing') #{product.pricing}
+			label.col-sm-2.control-label(name='title') #{product.title}
+			img( src="#{ product.image.url }" class="col-xs-10 no-float img-circle")
