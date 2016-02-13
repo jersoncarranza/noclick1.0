@@ -10,7 +10,7 @@ var adminController = require('../controllers/admin_controller');
 // **************  Gestión de rutas index, contacto y acerca de
 router.get("/", webController.index); 				// Index de la app
 router.get("/contacto", webController.contacto); 	// Conctacto de la app
-router.get("/about", webController.about); 			// Acerca de la app
+router.get("/construir", webController.construir); 			// Acerca de la app
 //router.get("/resultados", webController.resultados); 	// Resultados
 
 // **************  Gestión de rutas de menú

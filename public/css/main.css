@@ -76,9 +76,14 @@ a,.blue{
 	margin-bottom: 2em ;
 }
 .b-img { 
-	margin-bottom: 0.2em;
+	margin-bottom: 0.6em;
 	margin-left: 0.5em;
 	border-radius: 1em;
 	border: 1px solid #009FFF; 
 
+}
+
+.icontool{
+	font-size: 4em;
+	text-align: center;
 }

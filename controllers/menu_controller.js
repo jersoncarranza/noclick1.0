@@ -133,7 +133,6 @@ exports.put = function(req, res){
 				};
 				
 				models.Product.update({"_id": req.params.id}, data, function(product){
-				//hola(res);
 				console.log("Ingreso usuario normal");
 				res.redirect("../resultados");
 				});
@@ -173,6 +172,13 @@ exports.delete = function(req, res){
 		respuesta.redirect("/");
 	}
 };
+exports.resultados = function (req, res){
+	models.Product.find({"pricing":  0 }, function(error, documento){
+	//models.Product.find({"pricing":  0 }, function(error, documento){
+		if(error){console.log(error);}
+		res.render('./resultados', {products: documento });
+	});
+};
 /*
 exports.resultados = function (res) {
 	
@@ -185,14 +191,6 @@ exports.resultados = function (res) {
 	})
 };
 */
-
-exports.resultados = function (req, res){
-	models.Product.find(function(error, documento){
-		if(error){console.log(error);}
-//		console.log("esto es objeto..",documento.description);
-		res.render('./resultados', {products: documento });
-	});
-};
 
 
 /*

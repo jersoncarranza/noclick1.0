@@ -8,7 +8,7 @@ block contenido
 		//- p Ya voto usted
 
 	h2(class="text-center m-title")
-		strong Vota por el mejor profesor de Sistemas
+		strong Vota por el mejor profesor de la escuela de sistemas.
 	each product in products
 		div( class="col-lg-1 col-md-2 col-sm-3 col-xs-3 inline-block b-img " )
 			form(method="POST" action="/menu/#{product.id}?_method=put" enctype="multipart/form-data")
