@@ -188,11 +188,11 @@ exports.resultados = function (req, res){
 exports.resultadosdetallados = function (req, res){
 	//models.Product.find( function(error, documento){
 	models.Product.find(
-		{pricing: { $gt: 5 }},
+		{pricing: { $gt: 3 }},
 		{_id:1 , pricing:1, title:1,imageUrl:1},
 		function(error, documento){
 		if(error){console.log(error);}
-		res.render('./resultadosdetallados', {products: documento });
+		res.render('./resultadosdetallados', {resultados: documento });
 	}).sort( { pricing: -1 });
 };
 

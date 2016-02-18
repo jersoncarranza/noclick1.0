@@ -8,7 +8,7 @@ block contenido
 		//- p Ya voto usted
 
 	h2(class="text-center m-title")
-		strong Vota por el mejor profesor de la escuela de sistemas.
+		strong Vota por el mejor profesor de la escuela de Sistemas #[small(class="lato small") Octubre 2015 - Marzo 2016]
 	each product in products
 		div( class="col-lg-1 col-md-2 col-sm-3 col-xs-3 inline-block b-img " )
 			form(method="POST" action="/menu/#{product.id}?_method=put" enctype="multipart/form-data")
@@ -19,3 +19,5 @@ block contenido
 				//-input(type="submit" class="btn btn-info form-control" value="votar")
 				//-label.col-sm-2.control-label(name='password' ) usuario
 				//-label.col-sm-2.control-label(name='pricing') #{product.pricing}
+	section(class="container text-center")
+			a(class="text-center btn-info" href="./resultados") Resultados.

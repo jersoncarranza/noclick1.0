@@ -1,29 +1,27 @@
 extends ./layout.jade
 block contenido
 	link(href="./fonts/style.css" rel="stylesheet")
+	- nvotos = 1 
 	//-h2(class="text-center m-title")
 	//-	strong Gracias 
 	//-		span(class="icon-emoji-flirt")
 	h2(class="text-center m-title")
-		strong Estos son los rsultados.
-	//- each product in products
-	//- 	div( class="col-md-1 col-sm-4 col-xs-4 inline-block" )
-	//- 		label.col-sm-2.control-label(name='pricing') #{product.pricing}
-	//- 		label.col-sm-2.control-label(name='title') #{product.title}
-	//- 		img( src="#{ product.image.url }" class="col-xs-10 no-float img-circle")
-	
+		strong Resultados del mejor profesor de Sistemas #[small(class="lato small") Octubre 2015 - Marzo 2016]
 	section(class="grafico-barras animated fadeInDown delay-2 .container-fluid col-md-offset-2 col-md-8")
 		ul
 			each product in products
 				div(class="b-img")
 					img( src="#{ product.image.url }" class="col-xs-1 no-float img-circle")
+					#[small(class="lato small") #{nvotos}°]
+					- nvotos = nvotos + 1
 					div(class="progress")
 						div(class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="#{product.pricing}" aria-valuemin="0" aria-valuemax="100" style="width: #{product.pricing}%;" ) #{product.title}
-				
+
 		section(class="container text-center")
-			a(class="text-center" href="./resultadosdetallados") Resultados Detallados
-		//- 	div(class="progress")
-		//- 		div(class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="#{pro.pricing}" aria-valuemin="0" aria-valuemax="100" style="width: #{pro.pricing}%;" ) Anonimo
-	script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-	script(src="js/index.js")
+			a(class="text-center" href="./resultadosdetallados") Resultados Detallados.
+			//- extends ./resultadosdetallados.jade
+			//- block resultados
+			
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+		script(src="js/index.js")
 

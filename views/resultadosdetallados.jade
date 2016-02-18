@@ -5,13 +5,18 @@ block contenido
 	//-	strong Gracias 
 	//-		span(class="icon-emoji-flirt")
 	h2(class="text-center m-title")
-		strong Estos son los rsultados detallados.
+		strong Resultados detallados de los votos.
 
-	section
-		each product in products
-			div( class="col-lg-1 col-md-2 col-sm-3 col-xs-3 inline-block b-img " )
-				label.col-sm-2.control-label(name='title' class='text-center') #{product.title}  
-				img( src="#{ product.image.url }" class="col-xs-12 no-float img-circle")
-				label.col-sm-2.control-label(name='title' class='text-center') #{product.pricing}  
-				
-				
+	section(class='text-center')
+		each profesor in resultados
+			div( class="col-lg-1 col-md-2 col-sm-3 col-xs-3 col-xs-offset-3 inline-block b-img " )
+				label.col-sm-2.control-label(name='title' class='text-center') #{profesor.title}  
+				img( src="#{ profesor.image.url }" class="col-xs-12 no-float img-circle")
+				label.col-sm-2.control-label(name='title' class='text-center') #{profesor.pricing}  Votos
+	br
+	br
+	br
+	section(class='text-center')
+		p Gracias por tu participación.
+		span(class="icon-emoji-flirt") 
+	
