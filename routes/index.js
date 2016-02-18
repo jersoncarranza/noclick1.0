@@ -23,6 +23,7 @@ router.get('/menu/delete/:id', menuController.deleteView);// Pantalla que nos mu
 router.delete('/menu/:id', menuController.delete); 	// Gestión del borrado del producto
 //**
 router.get('/resultados', menuController.resultados); 			// Lista los objetos
+router.get('/resultadosdetallados', menuController.resultadosdetallados); 			// Lista los objetos
 // **************  Gestión de rutas de administración
 router.get('/admin', adminController.admin); 			// Página para ingresar contraseña
 router.post('/admin', adminController.login); 			// Lista los objetos en modo admin

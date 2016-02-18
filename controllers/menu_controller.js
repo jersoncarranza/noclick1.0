@@ -173,12 +173,29 @@ exports.delete = function(req, res){
 	}
 };
 exports.resultados = function (req, res){
-	models.Product.find({"pricing":  0 }, function(error, documento){
-	//models.Product.find({"pricing":  0 }, function(error, documento){
+	//models.Product.find( function(error, documento){
+	models.Product.find(
+		{pricing: { $gt: 19 }},
+		{_id:1 , pricing:1, title:1,imageUrl:1},
+		function(error, documento){
 		if(error){console.log(error);}
 		res.render('./resultados', {products: documento });
-	});
+	}).sort( { pricing: -1 });
 };
+
+
+
+exports.resultadosdetallados = function (req, res){
+	//models.Product.find( function(error, documento){
+	models.Product.find(
+		{pricing: { $gt: 5 }},
+		{_id:1 , pricing:1, title:1,imageUrl:1},
+		function(error, documento){
+		if(error){console.log(error);}
+		res.render('./resultadosdetallados', {products: documento });
+	}).sort( { pricing: -1 });
+};
+
 /*
 exports.resultados = function (res) {
 	

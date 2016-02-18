@@ -1,0 +1,17 @@
+extends ./layout.jade
+block contenido
+	link(href="./fonts/style.css" rel="stylesheet")
+	//-h2(class="text-center m-title")
+	//-	strong Gracias 
+	//-		span(class="icon-emoji-flirt")
+	h2(class="text-center m-title")
+		strong Estos son los rsultados detallados.
+
+	section
+		each product in products
+			div( class="col-lg-1 col-md-2 col-sm-3 col-xs-3 inline-block b-img " )
+				label.col-sm-2.control-label(name='title' class='text-center') #{product.title}  
+				img( src="#{ product.image.url }" class="col-xs-12 no-float img-circle")
+				label.col-sm-2.control-label(name='title' class='text-center') #{product.pricing}  
+				
+				

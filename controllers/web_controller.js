@@ -15,3 +15,7 @@ exports.resultados = function (req, res){
 	res.render('resultados');
 };
 
+exports.resultadosdetallados = function (req, res){
+	res.render('resultadosdetallados');
+};
+
